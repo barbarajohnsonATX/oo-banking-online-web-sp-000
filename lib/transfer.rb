@@ -36,11 +36,13 @@ class Transfer
   end 
   
   def reverse_transfer
-    previous_amount = @@all.last.amount 
-    @sender.balance += previous_amount
-    @receiver.balance -= previous_amount
-    @status = "reversed"
-    @@all << self 
+    if @status == "complete" 
+      previous_amount = @@all.last.amount 
+      @sender.balance += previous_amount
+      @receiver.balance -= previous_amount
+      @status = "reversed"
+      @@all << self 
+  end 
   end 
   
 end
