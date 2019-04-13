@@ -39,7 +39,7 @@ class Transfer
     previous_amount = @@all.last.amount 
     @sender.balance += previous_amount
     @receiver.balance -= previous_amount
-    @status = "complete"
+    @status = "reversed"
     @@all << self 
   end 
   
