@@ -30,7 +30,7 @@ class Transfer
       @sender.balance -= @amount 
       @receiver.balance += @amount 
       @status = "complete"
-      @@all < self 
+      @@all << self 
     end 
     end 
   end 
