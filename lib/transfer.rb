@@ -1,3 +1,5 @@
+require 'pry'
+
 class Transfer
   # your code here
   attr_accessor :sender, :receiver, :amount, :status, :amount, :last_transaction
@@ -19,6 +21,7 @@ class Transfer
   end 
   
   def execute_transaction 
+    binding.pry 
     valid = self.valid?
     if !@sender.valid?
       return "Transaction rejected. Please check your account balance."
