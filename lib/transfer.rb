@@ -22,5 +22,6 @@ class Transfer
     if !valid 
       return "Transaction rejected. Please check your account balance."
     end 
+  end 
   
 end
