@@ -11,7 +11,7 @@ class Transfer
     @receiver = receiver
     @status = "pending"
     @amount = amount 
-    @@lall << self 
+    @@all << self 
   end 
   
   def valid?
@@ -23,11 +23,9 @@ class Transfer
   end 
   
   def execute_transaction 
-    binding.pry 
-    valid = self.valid?
     if !@sender.valid?
       return "Transaction rejected. Please check your account balance."
-    else @last_transaction != self 
+    else if !@@all.include?(self)
       @sender.balance -= @amount 
       @receiver.balance += @amount 
       @status = "complete"
