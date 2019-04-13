@@ -2,14 +2,16 @@ require 'pry'
 
 class Transfer
   # your code here
-  attr_accessor :sender, :receiver, :amount, :status, :amount, :last_transaction
+  attr_accessor :sender, :receiver, :amount, :status, :amount
+  @@all = []
+  
   
   def initialize(sender, receiver, amount)
     @sender = sender 
     @receiver = receiver
     @status = "pending"
     @amount = amount 
-    @last_transaction = self 
+    @@lall << self 
   end 
   
   def valid?
