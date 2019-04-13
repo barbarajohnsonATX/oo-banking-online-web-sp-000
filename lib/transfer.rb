@@ -11,7 +11,6 @@ class Transfer
     @receiver = receiver
     @status = "pending"
     @amount = amount 
-    @@all << self 
   end 
   
   def valid?
@@ -31,6 +30,7 @@ class Transfer
       @sender.balance -= @amount 
       @receiver.balance += @amount 
       @status = "complete"
+      @@all < self 
     end 
     end 
   end 
